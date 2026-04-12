@@ -5,7 +5,6 @@ import youtube from "../assets/youtube.png";
 import linkdein from "../assets/linkedin.png";
 import github from "../assets/github.png";
 import akp from "../assets/akp.jpg";
-import Skill from "./skill";
 import resume from "../assets/Abhishek _pandit.pdf";
 import Experience from "./experience";
 
