@@ -8,8 +8,10 @@ export default function Project() {
       github_Link: "https://github.com/Abhishek-0899/Speedtester",
       Tech_Stack: ["React.js", "Tailwind CSS ", "Firebase", "Firebase-auth"],
       description: [
-        "Built a real-time typing practice application that calculates WPM, accuracy, and error counts with instant feedback",
-        " Engineered efficient character-tracking logic and a fully responsive UI for a smooth, low-latency typing experience",
+        " 🚀 Real-time typing engine with ultra-low latency",
+        "Achieved instant feedback with optimized character tracking",
+        "Designed smooth, responsive UI for high-speed input handling",
+        "Focused on performance and accuracy metrics (WPM, errors)",
       ],
     },
     {
@@ -18,16 +20,16 @@ export default function Project() {
       github_Link: "https://github.com/Abhishek-0899/RolebasedBlogs",
       Tech_Stack: ["React.js", "Tailwind CSS ", "Supabase", "Supabase-auth"],
       description: [
-        " Implemented a 3-tier RBAC system (Admin, Editor, User) with fully protected routes for secure content  access.",
+        " Engineered a scalable RBAC architecture with protected routing and role-based access control, simulating real-world multi-user systems ",
         "Developed a 100% responsive interface validated across four device breakpoints for consistent user experience.",
-        " Optimized Supabase queries and API workflows to achieve sub-150ms response times.",
+        " Optimized database queries and API calls, reducing response time to sub-150ms for faster data retrieval and smoother UX",
       ],
     },
   ];
   return (
     <>
-      <div className="text-white">
-        <h1 className="text-4xl font-semibold mb-10">Projects</h1>
+      <div id="project" className="text-white">
+        <h1 className="text-6xl font-semibold mb-10">Projects</h1>
 
         {Exp.map((item, index) => (
           <div

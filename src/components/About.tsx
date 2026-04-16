@@ -10,6 +10,7 @@ import Experience from "./experience";
 
 import Project from "./project";
 import Footer from "./footer";
+import Skill from "./skill";
 export default function About() {
   const Link = [
     {
@@ -34,66 +35,117 @@ export default function About() {
     },
   ];
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const navItem = [
+    { id: "skills", label: "Skills", number: "01" },
+    { id: "experience", label: "Experience", number: "02" },
+    { id: "project", label: "Project", number: "03" },
+  ];
+
   return (
     <>
       <div className="flex text-white p-20 gap-10">
         {/* LEFT SECTION */}
-        <section className="w-1/2 h-screen p-16 flex flex-col space-y-3 sticky top-0">
-          <div>
-            <div className="space-y-4">
-              <h1 className="text-6xl font-bold leading-tight">
-                I'm Abhishek Kumar Pandit
-                <h1 className="font-bold text-5xl leading-tight">
-                  Software Engineer → Frontend Specialist
+        <div className="w-1/2 h-screen p-16 flex flex-col space-y-3 sticky top-0">
+          <section className=" p-5">
+            <div>
+              <div className="space-y-4">
+                <h1 className="text-8xl font-bold leading-tight">
+                  I'm Abhishek Kumar Pandit
                 </h1>
-                <h1 className="font-bold leading-tight">
-                  Turning complex problems into fast, intuitive user interfaces
-                </h1>
-              </h1>
-            </div>
-
-            <h3 className="text-4xl mt-5 font-medium text-gray-400">
-              Software Engineer with 3 years of experience transitioning into{" "}
-              <br />
-              frontend development, with hands-on experience in React.js <br />{" "}
-              and Next.js. Strong foundation in backend development using <br />{" "}
-              C#, along with experience in APIs and authentication. Focused on
-              building scalable and user-friendly web applications.
-            </h3>
-          </div>
-          <div className="flex items-center gap-5 p-4">
-            <img className="rounded-full size-20" src={akp} alt="logo.png" />
-            <button className="text-2xl flex bg-red-400 rounded-md items-center p-2 gap-2 hover:scale-105 transition">
-              <HiDocumentDownload size={50} />
-              <a href={resume} download="resume">
-                Resume
-              </a>
-            </button>
-          </div>
-
-          {/* <div>
-          <h1 className="text-5xl">1.Project
-            a
-          </h1>
-        </div> */}
-          <div className="grid grid-cols-2 rounded-md border-2">
-            {Link.map((item) => (
-              <div className="flex items-center -mr-4 ">
-                <div className="flex items-center gap-5">
-                  <img className="size-12" src={item.icon} alt="vite.png" />
-                  <h1 className="text-2xl">{item.name}</h1>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    <BsBoxArrowUpRight size={25} />
-                  </a>
-                </div>
               </div>
+
+              <div className="mt-6 w-full space-y-4 text-gray-400">
+                <p className="text-4xl w-full">
+                  Frontend Engineer with 3 years of experience building
+                  high-performance, scalable web applications using React.js and
+                  Next.js.
+                </p>
+
+                <p className="text-4xl">
+                  I specialize in performance optimization, reducing load times,
+                  and improving API efficiency to deliver fast, seamless user
+                  experiences.
+                </p>
+
+                <p className="text-4xl">
+                  Strong backend foundation in C#, APIs, and authentication,
+                  enabling end-to-end ownership and scalable system design.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 ml-5 mt-10 mb-10">
+              {navItem.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="group text-left"
+                >
+                  <div
+                    className="
+          flex items-center gap-2 
+          text-3xl text-gray-200
+          transition duration-300
+          group-hover:text-gray-400
+          group-hover:scale-150
+          origin-left
+        "
+                  >
+                    <span>{item.number}</span>
+                    <span>-</span>
+                    <span>{item.label}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center gap-10 p-4">
+              <img className="rounded-full size-20" src={akp} alt="logo.png" />
+              <button className="text-2xl flex bg-red-400 rounded-md items-center p-2 gap-2 hover:scale-105 transition">
+                <HiDocumentDownload size={50} />
+                <a
+                  href={resume}
+                  download="Abhishek_Kumar_Pandit_Resume"
+                  className="text-2xl flex bg-red-400 rounded-md items-center p-2 gap-2 hover:scale-105 transition"
+                >
+                  Resume
+                </a>
+              </button>
+            </div>
+          </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mr-96">
+            {Link.map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+        flex items-center justify-between
+        gap-3 px-4 py-3
+        hover:bg-white/5 hover:scale-[1.02]
+        transition duration-300
+      "
+              >
+                <div className="flex items-center justify-center gap-4">
+                  <img className="w-10 h-10" src={item.icon} alt={item.name} />
+                  <span className="text-2xl font-medium">{item.name}</span>
+                  <BsBoxArrowUpRight size={20} className="opacity-70" />
+                </div>
+              </a>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* RIGHT SECTION */}
-        <section className="w-1/2 flex flex-col">
-          {/* <Skill /> */}
+        <section className="w-1/2 flex flex-col p-16">
+          <Skill />
           <Experience />
           <Project />
         </section>

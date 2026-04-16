@@ -32,8 +32,8 @@ export default function Experience() {
 
   return (
     <>
-      <div className="text-white">
-        <h1 className="text-4xl font-semibold mb-10">Experience</h1>
+      <div className="text-white" id="experience">
+        <h1 className="text-6xl font-semibold mb-10">Experience</h1>
 
         {Exp.map((item, index) => (
           <div
