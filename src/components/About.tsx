@@ -9,6 +9,7 @@ import Experience from "./experience";
 import Project from "./project";
 import Footer from "./footer";
 import Skill from "./skill";
+import Contact from "./Contact";
 export default function About() {
   const Link = [
     {
@@ -40,6 +41,7 @@ export default function About() {
     { id: "skills", label: "Skills", number: "01" },
     { id: "experience", label: "Experience", number: "02" },
     { id: "project", label: "Project", number: "03" },
+    { id: "Contact", label: "Contact", number: "04" },
   ];
 
   return (
@@ -57,20 +59,22 @@ export default function About() {
 
               <div className="mt-6 w-full space-y-4 text-gray-400">
                 <p className="text-4xl w-full">
-                  Frontend Engineer with 3 years of experience building
-                  high-performance, scalable web applications using React.js and
-                  Next.js.
+                  Frontend Engineer specializing in high-performance React &
+                  Next.js applications with 3 years of experience.
                 </p>
 
                 <p className="text-4xl">
-                  I specialize in performance optimization, reducing load times,
-                  and improving API efficiency to deliver fast, seamless user
-                  experiences.
+                  Improved application performance by up to 80% and reduced user
+                  churn through scalable, production-grade solutions.
+                </p>
+                <p className="text-4xl">
+                  Focused on performance optimization, fast load times, and
+                  efficient API-driven systems.
                 </p>
 
                 <p className="text-4xl">
-                  Strong backend foundation in C#, APIs, and authentication,
-                  enabling end-to-end ownership and scalable system design.
+                  Strong backend foundation in C#, APIs, and authentication —
+                  enabling end-to-end ownership.
                 </p>
               </div>
             </div>
@@ -99,7 +103,7 @@ export default function About() {
               ))}
             </div>
 
-            <div className="text-3xl">🌍 Open to Remote Opportunities</div>
+            <div className="text-3xl">🌍 Available for remote frontend roles</div>
           </section>
 
           <div className="flex gap-4 p-4 rounded-full">
@@ -153,6 +157,7 @@ export default function About() {
           <Skill />
           <Experience />
           <Project />
+          <Contact />
         </section>
       </div>
 
