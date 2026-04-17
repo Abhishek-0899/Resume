@@ -9,7 +9,6 @@ import Experience from "./experience";
 import Project from "./project";
 import Footer from "./footer";
 import Skill from "./skill";
-import Contact from "./Contact";
 export default function About() {
   const Link = [
     {
@@ -41,7 +40,6 @@ export default function About() {
     { id: "skills", label: "Skills", number: "01" },
     { id: "experience", label: "Experience", number: "02" },
     { id: "project", label: "Project", number: "03" },
-    { id: "Contact", label: "Contact", number: "04" },
   ];
 
   return (
@@ -104,6 +102,7 @@ export default function About() {
             </div>
 
             <div className="text-3xl">🌍 Available for remote frontend roles</div>
+            <div className="text-3xl">Let’s build fast, scalable applications together.</div>
           </section>
 
           <div className="flex gap-4 p-4 rounded-full">
@@ -131,7 +130,7 @@ export default function About() {
             ))}
           </div>
           <div className="flex items-center gap-10 p-4">
-            <button className="text-2xl flex bg-white/30 rounded-xl items-center p-2 gap-2 hover:scale-125 transition">
+            <button className="text-2xl flex bg-white/30 rounded-xl items-center p-2 gap-2 hover:scale-125 transition hover:bg-blue-600">
               <HiDocumentDownload size={50} />
               <a
                 href={resume}
@@ -141,7 +140,7 @@ export default function About() {
                 Resume
               </a>
             </button>
-            <button className="text-2xl flex bg-green-300 text-black font-bold rounded-xl items-center p-2 gap-2 hover:scale-125 transition">
+            <button className="text-2xl flex bg-green-300 hover:bg-green-600 text-black font-bold rounded-xl items-center p-2 gap-2 hover:scale-125 transition">
               <a
                 href="mailto:abhishekkumarpandit3@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Abhishek,%20I’d%20like%20to%20discuss%20a%20project."
                 className="text-2xl flex  rounded-md items-center p-2 gap-2 hover:scale-125 transition"
@@ -156,8 +155,7 @@ export default function About() {
         <section className="w-1/2 flex flex-col p-16">
           <Skill />
           <Experience />
-          <Project />
-          <Contact />
+          <Project />       
         </section>
       </div>
 
