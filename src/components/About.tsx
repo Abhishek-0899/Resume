@@ -1,10 +1,8 @@
 import { HiDocumentDownload } from "react-icons/hi";
-import { BsBoxArrowUpRight } from "react-icons/bs";
 import twitter_ from "../assets/twitter-.gif";
 import youtube from "../assets/youtube.png";
 import linkdein from "../assets/linkedin.png";
 import github from "../assets/github.png";
-import akp from "../assets/akp.jpg";
 import resume from "../assets/Abhishek _pandit.pdf";
 import Experience from "./experience";
 
@@ -14,22 +12,18 @@ import Skill from "./skill";
 export default function About() {
   const Link = [
     {
-      name: "Youtube",
       icon: youtube,
       url: "https://www.youtube.com/@spiderweb8177",
     },
     {
-      name: "Twitter",
       icon: twitter_,
       url: "https://www.youtube.com/@spiderweb8177",
     },
     {
-      name: "Linkdein",
       icon: linkdein,
       url: "https://www.linkedin.com/in/abhishek-kumar-pandit-597383191/",
     },
     {
-      name: "Github",
       icon: github,
       url: "https://github.com/Abhishek-0899",
     },
@@ -104,42 +98,53 @@ export default function About() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-10 p-4">
-              <img className="rounded-full size-20" src={akp} alt="logo.png" />
-              <button className="text-2xl flex bg-red-400 rounded-md items-center p-2 gap-2 hover:scale-105 transition">
-                <HiDocumentDownload size={50} />
-                <a
-                  href={resume}
-                  download="Abhishek_Kumar_Pandit_Resume"
-                  className="text-2xl flex bg-red-400 rounded-md items-center p-2 gap-2 hover:scale-105 transition"
-                >
-                  Resume
-                </a>
-              </button>
-            </div>
+
+            <div className="text-3xl">🌍 Open to Remote Opportunities</div>
           </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mr-96">
-            {Link.map((item) => (
+          <div className="flex gap-4 p-4 rounded-full">
+            {Link.map((item, index) => (
               <a
-                key={item.name}
+                key={index}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-        flex items-center justify-between
-        gap-3 px-4 py-3
-        hover:bg-white/5 hover:scale-[1.02]
+        flex items-center gap-4
+    p-5
+        rounded-full
+        bg-white/30
+        hover:bg-white/10 hover:scale-125
         transition duration-300
       "
               >
-                <div className="flex items-center justify-center gap-4">
-                  <img className="w-10 h-10" src={item.icon} alt={item.name} />
-                  <span className="text-2xl font-medium">{item.name}</span>
-                  <BsBoxArrowUpRight size={20} className="opacity-70" />
-                </div>
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src={item.icon}
+                  alt=""
+                />
               </a>
             ))}
+          </div>
+          <div className="flex items-center gap-10 p-4">
+            <button className="text-2xl flex bg-white/30 rounded-xl items-center p-2 gap-2 hover:scale-125 transition">
+              <HiDocumentDownload size={50} />
+              <a
+                href={resume}
+                download="Abhishek_Kumar_Pandit_Resume"
+                className="text-2xl flex  rounded-md items-center p-2 gap-2 hover:scale-125 transition"
+              >
+                Resume
+              </a>
+            </button>
+            <button className="text-2xl flex bg-green-300 text-black font-bold rounded-xl items-center p-2 gap-2 hover:scale-125 transition">
+              <a
+                href="mailto:abhishekkumarpandit3@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Abhishek,%20I’d%20like%20to%20discuss%20a%20project."
+                className="text-2xl flex  rounded-md items-center p-2 gap-2 hover:scale-125 transition"
+              >
+                Hire Me
+              </a>
+            </button>
           </div>
         </div>
 

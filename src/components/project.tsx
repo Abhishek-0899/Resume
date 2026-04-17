@@ -29,7 +29,7 @@ export default function Project() {
   return (
     <>
       <div id="project" className="text-white">
-        <h1 className="text-6xl font-semibold mb-10">Projects</h1>
+        <h1 className="text-6xl font-semibold mb-10 text-yellow-100">Projects</h1>
 
         {Exp.map((item, index) => (
           <div
