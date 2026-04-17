@@ -13,7 +13,7 @@ export default function Experience() {
       duration: "Jul 2023 – Present",
       description: [
         "Designed and implemented a licensing feature for the Pomeronic application, reducing user churn by 30% and improving customer  retention, satisfaction through seamless integration across platforms.",
-        "    Refactored React components and optimized rendering using memoization and lazy loading, improving application efficiency by 80% while ensuring compliance with TDD best practices.",
+        "Refactored React components and optimized rendering using memoization and lazy loading, improving application efficiency by 80% while ensuring compliance with TDD best practices.",
       ],
     },
     {
@@ -32,46 +32,68 @@ export default function Experience() {
 
   return (
     <>
-      <div className="text-white" id="experience">
-        <h1 className="text-6xl text-red-300 font-semibold mb-10">
+      <div className="text-white w-full py-20 px-4 " id="experience">
+        {/* Heading */}
+        <h1 className="text-3xl sm:text-6xl text-red-300 -mt-48 sm:-mt-36 font-semibold mb-10">
           Experience
         </h1>
 
         {Exp.map((item, index) => (
           <div
             key={index}
-            className="border-2 border-b-gray-900 p-10 rounded-2xl mb-5"
+            className="
+      border border-white/10 
+      p-4 sm:p-8 md:p-10 
+      rounded-2xl mb-5 md:mb-6 
+      bg-white/5 backdrop-blur-md
+      hover:border-white/30 transition-all duration-300
+    "
           >
-            <div className="flex justify-between items-center">
-              <h1 className="text-4xl font-medium mb-6">{item.role}</h1>
+            {/* Top Row */}
+            <div className="flex justify-between items-center sm:items-center gap-3 sm:gap-4">
+              <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-medium">
+                {item.role}
+              </h1>
+
               <a
-                className="mr-9 "
+                className="shrink-0"
                 href={item.company_Link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BsBoxArrowUpRight size={32} />
+                <BsBoxArrowUpRight className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8" />
               </a>
             </div>
-            <div className="flex gap-4 items-center -mt-6 mb-15">
+
+            {/* Company Info */}
+            <div className="flex gap-3 sm:gap-4 items-center mt-3 sm:mt-6 mb-5 md:mb-6">
               <img
                 src={item.company_Img}
                 alt=""
-                className="h-32 w-32 object-contain"
+                className="h-14 w-14 sm:h-16 sm:w-16 md:h-24 md:w-24 object-contain"
               />
-              <div className="gap-5">
-                <h1 className="text-4xl font-bold">{item.designation} at</h1>
-                <h1 className="text-4xl text-green-300">{item.company_name}</h1>
+
+              <div className="min-w-0">
+                <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold">
+                  {item.designation} at
+                </h1>
+                <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl text-green-300">
+                  {item.company_name}
+                </h1>
               </div>
             </div>
-            <h2 className="text-4xl mb-4">{item.duration} </h2>
-            <div>
-              <ul className="md:text-3xl list-disc pl-6 space-y-3 text-gray-400 leading-normal ">
-                {item.description.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-            </div>
+
+            {/* Duration */}
+            <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl mb-3 md:mb-4 text-gray-300">
+              {item.duration}
+            </h2>
+
+            {/* Description */}
+            <ul className="text-sm sm:text-3xl md:text-3xl lg:text-3xl list-disc pl-5 md:pl-6 space-y-2 md:space-y-3 text-gray-400 leading-loose">
+              {item.description.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
